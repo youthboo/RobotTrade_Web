@@ -40,7 +40,7 @@ function Summary() {
 
   const fetchUserCount = async () => {
     try {
-      const response = await axios.get('http://localhost:5656/api/users/count');
+      const response = await axios.get('http://192.168.15.227:5656/api/users/count');
       setUserCount(response.data.count);
     } catch (error) {
       console.error('Error fetching user count:', error);

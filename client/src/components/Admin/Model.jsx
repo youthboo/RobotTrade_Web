@@ -14,7 +14,7 @@ function Model() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get('http://localhost:5656/api/admincheck'); 
+                const response = await axios.get('http://192.168.15.227:5656/api/admincheck'); 
                 setData(response.data); 
             } catch (error) {
                 console.error('Error fetching data:', error);

@@ -19,7 +19,7 @@ function Trip() {
 
   const downloadFile = (currencyPair) => {
     Axios({
-      url: `http://localhost:5656/api/download/${currencyPair}`,
+      url: `http://192.168.15.227:5656/api/download/${currencyPair}`,
       method: 'GET',
       responseType: 'blob'
     }).then((res) => {

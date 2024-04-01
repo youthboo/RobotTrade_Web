@@ -19,7 +19,7 @@ function Backtest() {
   const download = (e) => {
     e.preventDefault();
     Axios({
-      url: 'http://localhost:5656',
+      url: 'http://192.168.15.227:5656',
       method: 'GET',
       responseType: 'blob',
     }).then((res) => {
