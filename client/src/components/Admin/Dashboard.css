@@ -1,0 +1,6 @@
+.welad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* กำหนดความสูงของพื้นที่ให้เท่ากับความสูงของหน้าจอ */
+}

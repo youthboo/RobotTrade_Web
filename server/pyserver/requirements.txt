@@ -1,0 +1,8 @@
+tensorflow
+scikit-learn
+numpy
+zmq
+tensorboard
+pyngrok
+tensorflow-addons
+tensorflow-io-gcs-filesystem

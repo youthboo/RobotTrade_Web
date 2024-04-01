@@ -1,0 +1,25 @@
+FROM python:3.10.10
+
+WORKDIR /app/server/pyserver
+
+# Copy the contents of the server directory
+COPY server/pyserver/ .
+
+COPY server/pyserver/gold15M.h5 .
+COPY server/pyserver/scaler_gold.npy .
+
+COPY server/pyserver/eurusd15M.h5 .
+COPY server/pyserver/scaler_eurusd.npy .
+
+COPY server/pyserver/usdjpy15M.h5 .
+COPY server/pyserver/scaler_usdjpy.npy .
+
+# Install Python dependencies
+COPY server/pyserver/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install tensorflow==2.10.0 tensorflow-addons
+
+EXPOSE 8001 7001 6001
+
+# Modify CMD to run your desired Python script(s)
+CMD ["sh", "-c", "python model_gold.py & python model_eurusd.py & python model_usdjpy.py"]

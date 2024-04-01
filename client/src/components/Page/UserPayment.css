@@ -1,0 +1,84 @@
+.PaymentContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/piceur.jpg');
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(20px); /* ใช้ backdrop-filter แทน filter */
+  background-color: rgba(255, 255, 255, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.PaymentForm {
+  background-color: #fff; 
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  width: 400px;
+}
+
+.bottom-left-icon {
+  position: fixed; 
+  bottom: 0; 
+  left: 0; 
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.Note {
+  margin-top: 10px;
+  font-size: 14px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #888;
+}
+
+.FormRow {
+  margin-bottom: 20px;
+}
+
+.FormLabel {
+  display: block;
+  font-weight: bold;
+  color: #000000;
+}
+
+.EmailInput {
+  width: calc(100% - 20px);
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.EmailInput:focus {
+  border-color: #b9bfff;
+}
+
+.ErrorMessage {
+  color: red;
+  margin-bottom: 15px;
+}
+
+.SubmitButton {
+  background-color: #2e208a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.SubmitButton:hover {
+  background-color: #3a81d7;
+}
