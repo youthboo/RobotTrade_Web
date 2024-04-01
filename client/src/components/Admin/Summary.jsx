@@ -19,7 +19,7 @@ function Summary() {
   const fetchMt4Data = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5555/api/mt4data');
+      const response = await axios.get('http://localhost:5656/api/mt4data');
       const mt4Data = response.data;
       const totalProfitSum = mt4Data.reduce((sum, data) => sum + data.profit, 0);
       setTotalProfit(totalProfitSum);
@@ -40,7 +40,7 @@ function Summary() {
 
   const fetchUserCount = async () => {
     try {
-      const response = await axios.get('http://localhost:5555/api/users/count');
+      const response = await axios.get('http://localhost:5656/api/users/count');
       setUserCount(response.data.count);
     } catch (error) {
       console.error('Error fetching user count:', error);

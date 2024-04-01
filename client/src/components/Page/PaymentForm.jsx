@@ -23,7 +23,7 @@ const PaymentForm = ({ amount, userLogin }) => {
             return;
         }
 
-        const response = await axios.post('http://localhost:5555/api/payment', {
+        const response = await axios.post('http://localhost:5656/api/payment', {
             amount,
             userLogin,
             payment_method_id: paymentMethod.id,

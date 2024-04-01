@@ -35,7 +35,7 @@ const UserPort = () => {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const response = await axios.get('http://localhost:5555/api/mt4data');
+            const response = await axios.get('http://localhost:5656/api/mt4data');
             setMt4Data(response.data);
             calculateCommission(response.data);
         } catch (error) {

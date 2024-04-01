@@ -18,7 +18,7 @@ function UserPayment() {
         throw new Error('Email is required');
       }
       
-      const response = await fetch(`http://localhost:5555/api/get-payment?email=${email}`, {
+      const response = await fetch(`http://localhost:5656/api/get-payment?email=${email}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ function UserPayment() {
       
       const { payment } = await response.json();
   
-      const paymentIntentResponse = await fetch('http://localhost:5555/api/create-payment-intent', {
+      const paymentIntentResponse = await fetch('http://localhost:5656/api/create-payment-intent', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',

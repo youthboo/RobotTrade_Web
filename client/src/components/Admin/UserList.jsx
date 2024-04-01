@@ -26,7 +26,7 @@ function UserList() {
       });
   
       if (result.isConfirmed) {
-        await axios.delete(`http://localhost:5555/api/users/${id}`);
+        await axios.delete(`http://localhost:5656/api/users/${id}`);
         setUsers(users.filter((user) => user._id !== id));
         Swal.fire(
           'Deleted!',
@@ -52,7 +52,7 @@ function UserList() {
 
   const handleEditSubmit = async () => {
     try {
-      await axios.put(`http://localhost:5555/api/users/${editUserId}`, editFormData);
+      await axios.put(`http://localhost:5656/api/users/${editUserId}`, editFormData);
       setOpenEditDialog(false);
       const updatedUsers = users.map(user => {
         if (user._id === editUserId) {
@@ -69,7 +69,7 @@ function UserList() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:5555/api/users');
+        const response = await axios.get('http://localhost:5656/api/users');
         setUsers(response.data);
       } catch (error) {
         console.error('Error fetching users:', error);

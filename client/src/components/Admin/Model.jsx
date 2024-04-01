@@ -14,7 +14,7 @@ function Model() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get('http://localhost:5555/api/admincheck'); 
+                const response = await axios.get('http://localhost:5656/api/admincheck'); 
                 setData(response.data); 
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -35,7 +35,7 @@ function Model() {
 
     const handleEditSubmit = async () => {
         try {
-            await axios.put(`http://localhost:5555/api/admincheck/${editFormData._id}`, editFormData);
+            await axios.put(`http://localhost:5656/api/admincheck/${editFormData._id}`, editFormData);
             setOpenEditDialog(false);
             fetchData();
         } catch (error) {
@@ -56,7 +56,7 @@ function Model() {
     
         if (result.isConfirmed) {
             try {
-                await axios.delete(`http://localhost:5555/api/admincheck/${id}`);
+                await axios.delete(`http://localhost:5656/api/admincheck/${id}`);
                 fetchData();
                 Swal.fire(
                     'Deleted!',

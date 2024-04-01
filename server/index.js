@@ -27,7 +27,7 @@ cron.schedule('15 0 19 * *', async () => {
 
 async function saveCommissionData() {
     try {
-        const response = await axios.get('http://localhost:5555/api/mt4user');
+        const response = await axios.get('http://localhost:5656/api/mt4user');
         const mt4Data = response.data;
 
         const commissionMap = new Map(); // เก็บ commission ตาม userLogin
@@ -70,7 +70,7 @@ async function saveCommissionData() {
 async function saveCommissionToDatabase(commission) {
     try {
         commission.date = new Date();
-        await axios.post('http://localhost:5555/api/commission', commission);
+        await axios.post('http://localhost:5656/api/commission', commission);
     } catch (error) {
         console.error('Error saving commission to database:', error);
     }
@@ -98,5 +98,5 @@ app.use('/api', profileRoutes)
 app.use('/api', updateFileRoutes)
 
 
-const port = process.env.PORT || 5555;
+const port = process.env.PORT || 5656;
 app.listen(port,() => console.log("Listening on port..."))

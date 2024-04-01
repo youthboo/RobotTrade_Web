@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: client/Dockerfile
     ports:
-      - '5173:5173'
+      - '5188:5188'
     image: 1779900303085/robot-trade:client-latest
 
   server:
@@ -15,8 +15,8 @@ services:
       context: .
       dockerfile: server/Dockerfile
     ports:
-      - '5555:5555'
-      - '8000:8000'
+      - '5656:5656'
+      - '8080:8080'
     image: 1779900303085/robot-trade:server-latest
 
   mongodb:
