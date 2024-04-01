@@ -23,7 +23,7 @@ services:
     image: mongo
     container_name: mongodb
     ports:
-      - '27033:27017'
+      - '27033:27033'
     volumes:
       - mongodb_data:/data/db
 
