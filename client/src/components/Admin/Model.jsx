@@ -35,7 +35,7 @@ function Model() {
 
     const handleEditSubmit = async () => {
         try {
-            await axios.put(`http://localhost:5656/api/admincheck/${editFormData._id}`, editFormData);
+            await axios.put(`http://192.168.15.227:5656/api/admincheck/${editFormData._id}`, editFormData);
             setOpenEditDialog(false);
             fetchData();
         } catch (error) {
@@ -56,7 +56,7 @@ function Model() {
     
         if (result.isConfirmed) {
             try {
-                await axios.delete(`http://localhost:5656/api/admincheck/${id}`);
+                await axios.delete(`http://192.168.15.227:5656/api/admincheck/${id}`);
                 fetchData();
                 Swal.fire(
                     'Deleted!',

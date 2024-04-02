@@ -16,7 +16,7 @@ scaler.min_, scaler.scale_ = np.load(file_path)
 
 context = zmq.Context()
 socket = context.socket(zmq.REP)
-socket.bind("tcp://*:7001")
+socket.bind("tcp://*:7701")
 
 def predict_price(close_prices):
     close_normalized = scaler.transform(np.array(close_prices).reshape(-1, 1))

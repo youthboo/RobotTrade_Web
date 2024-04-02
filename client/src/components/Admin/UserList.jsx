@@ -6,8 +6,6 @@ import Swal from 'sweetalert2';
 import NavbarSidebar from './NavbarSidebar'; 
 
 function UserList() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isAdminClicked, setIsAdminClicked] = useState(false);
   const [users, setUsers] = useState([]);
   const [openEditDialog, setOpenEditDialog] = useState(false);
   const [editFormData, setEditFormData] = useState({});

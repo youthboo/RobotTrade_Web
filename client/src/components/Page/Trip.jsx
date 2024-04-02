@@ -3,7 +3,6 @@ import './TripStyles.css';
 import TripData from './TripData';
 import Goldpic2 from '../../assets/backpqy.jpg'
 import Back1 from '../../assets/goldback.jpg'
-import Back2 from '../../assets/eurusdback.jpg'
 import Back3 from '../../assets/usdjpyback.jpg'
 import symbol2 from '../../assets/eurusd.png';
 import symbol3 from '../../assets/usdjpy.png';

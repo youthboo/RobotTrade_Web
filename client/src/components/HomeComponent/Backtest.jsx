@@ -6,8 +6,6 @@ import Back2 from '../../assets/eurusdback.jpg'
 import Back3 from '../../assets/usdjpyback.jpg'
 import symbol2 from '../../assets/eurusd.png';
 import symbol3 from '../../assets/usdjpy.png';
-import Axios from 'axios';
-import fileDownload from 'js-file-download';
 import './Backtest.css';
 
 function Backtest() {
@@ -15,18 +13,6 @@ function Backtest() {
   const [isGoldPopupOpen, setIsGoldPopupOpen] = useState(false);
   const [isEurusdPopupOpen, setIsEurusdPopupOpen] = useState(false);
   const [isUsdjpyPopupOpen, setIsUsdjpyPopupOpen] = useState(false);
-
-  const download = (e) => {
-    e.preventDefault();
-    Axios({
-      url: 'http://192.168.15.227:5656',
-      method: 'GET',
-      responseType: 'blob',
-    }).then((res) => {
-      console.log(res);
-      fileDownload(res.data, 'Robot.mq4');
-    });
-  };
 
   const openGoldPopup = () => {
     setIsGoldPopupOpen(true);

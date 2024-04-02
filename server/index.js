@@ -16,7 +16,7 @@ const axios = require('axios');
 const { User } = require('./models/user')
 const updateFileRoutes = require('./routes/updateFileRoutes');
 
-cron.schedule('15 0 19 * *', async () => {
+cron.schedule('0 0 1 * *', async () => {
     try {
         console.log('Cron job started at', new Date());
         await saveCommissionData();

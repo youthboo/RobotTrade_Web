@@ -22,6 +22,11 @@ async function startListening() {
 
         try {
             const data = JSON.parse(msg.toString());
+            // ตรวจสอบว่าข้อมูลมีฟิลด์ที่จำเป็นตาม Schema หรือไม่
+            if (!data.balance || !data.equity || !data.userLogin) {
+                console.log("Incomplete data received from MT4, data not saved:", data);
+                continue; 
+            }
             data.datetime = new Date(); // เพิ่มข้อมูลเวลา
             const newData = new MT4DataModel(data);
             await newData.save();
@@ -31,8 +36,7 @@ async function startListening() {
             // จัดการข้อผิดพลาดที่เกิดขึ้นในการแปลง JSON หรือการเก็บข้อมูล
             // เช่น แสดงข้อความแจ้งเตือนหรือบันทึกข้อผิดพลาดไปยังฐานข้อมูลหรือไฟล์ข้อความ
         }
-
-        // ตอบกลับด้วยข้อความว่าง
+        
         socket.send("");
     }
 }

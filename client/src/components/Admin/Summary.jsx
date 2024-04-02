@@ -19,7 +19,7 @@ function Summary() {
   const fetchMt4Data = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5656/api/mt4data');
+      const response = await axios.get('http://192.168.15.227:5656/api/mt4data');
       const mt4Data = response.data;
       const totalProfitSum = mt4Data.reduce((sum, data) => sum + data.profit, 0);
       setTotalProfit(totalProfitSum);
@@ -63,7 +63,7 @@ function Summary() {
         existingChart.destroy();
       }
   
-      const myChart = new Chart(ctx, {
+      const Chart = new Chart(ctx, {
         type: 'line',
         data: {
           labels,
