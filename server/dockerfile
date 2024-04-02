@@ -8,8 +8,6 @@ COPY package*.json ./
 # Install root dependencies
 RUN npm install --force
 
-RUN npm install nodemon
-
 # Install Stripe CLI
 RUN curl -fsSL https://cli.stripe.com/install.sh | sh
 
