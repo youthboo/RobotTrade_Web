@@ -8,7 +8,7 @@ COPY package*.json ./
 # Install root dependencies
 RUN npm install --force
 
-RUN npm install -g nodemon
+RUN npm install nodemon
 
 # Install Stripe CLI
 RUN curl -fsSL https://cli.stripe.com/install.sh | sh
@@ -21,7 +21,7 @@ COPY server/ .
 EXPOSE 5656 8033
 
 # Define the command to run your app
-CMD ["npm", "start"]
+CMD ["npx","nodemon", "index.js"]
 
 
 
