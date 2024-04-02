@@ -6,3 +6,6 @@ tensorboard
 pyngrok
 tensorflow-addons
 tensorflow-io-gcs-filesystem
+tensorflow==2.10.0 
+
+
