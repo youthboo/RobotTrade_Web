@@ -1,4 +1,4 @@
-FROM python:3.7.0
+FROM python:3.10.10
 
 WORKDIR /app/server/pyserver
 
@@ -17,9 +17,9 @@ COPY server/pyserver/scaler_usdjpy.npy .
 # Install Python dependencies
 COPY server/pyserver/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-#RUN pip install tensorflow-addons 
+RUN pip install tensorflow==2.10.0 tensorflow-addons
 
 EXPOSE 8801 7701 6601
 
 # Modify CMD to run your desired Python script(s)
-CMD ["sh", "-c", "python model_gold.py && python model_eurusd.py && python model_usdjpy.py"]
+CMD ["sh", "-c", "python model_gold.py & python model_eurusd.py & python model_usdjpy.py"]

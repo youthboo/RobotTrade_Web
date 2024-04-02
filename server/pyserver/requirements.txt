@@ -1,3 +1,4 @@
+tensorflow
 scikit-learn
 numpy
 zmq
@@ -5,7 +6,3 @@ tensorboard
 pyngrok
 tensorflow-addons
 tensorflow-io-gcs-filesystem
-tensorflow-cpu
-tensorflow==2.10.0 
-
-
