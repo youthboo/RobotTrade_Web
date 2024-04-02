@@ -47,6 +47,7 @@ services:
       - client
       - server
       - predict
+      - mongodb
     container_name: nginx
 
 volumes:

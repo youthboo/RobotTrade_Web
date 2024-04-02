@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
-    port: process.env.PORT || 5188, // ใช้ค่า PORT จาก .env หากมีหรือใช้ค่า 5173 เป็นค่าเริ่มต้น
+    port: process.env.PORT || 5188, 
     watch: {
       usePolling: true,
     },
