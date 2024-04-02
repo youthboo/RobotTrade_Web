@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express')
 const app = express();
 const cors = require('cors');
@@ -98,5 +97,5 @@ app.use('/api', profileRoutes)
 app.use('/api', updateFileRoutes)
 
 
-const port = process.env.PORT || 5656;
+const port = 5656;
 app.listen(port,() => console.log("Listening on port..."))
