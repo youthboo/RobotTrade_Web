@@ -19,7 +19,7 @@ COPY server/pyserver/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install tensorflow==2.10.0 tensorflow-addons
 
-EXPOSE 8001 7001 6001
+EXPOSE 8801 7701 6601
 
 # Modify CMD to run your desired Python script(s)
 CMD ["sh", "-c", "python model_gold.py & python model_eurusd.py & python model_usdjpy.py"]
