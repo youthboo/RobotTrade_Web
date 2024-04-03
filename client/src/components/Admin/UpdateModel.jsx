@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './UpdateModel.css';
-import NavbarSidebar from './NavbarSidebar'; 
+import NavbarSidebar from './NavbarSidebar';
 
 function UpdateModel() {
   const [file, setFile] = useState(null);
@@ -30,7 +30,7 @@ function UpdateModel() {
       formData.append('description', description);
       formData.append('currencyPair', currencyPair);
 
-      await axios.post('http://192.168.15.227:5656/api/upload', formData, {
+      await axios.post('http://localhost:5555/api/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -53,10 +53,15 @@ function UpdateModel() {
                 <label htmlFor="explain">Description:</label>
                 <input type="text" id="description" name="description" value={description} onChange={handleChange} />
                 </div>
-            <div>
-                <label htmlFor="currencyPair">Currency Pair:</label>
-                <input type="text" id="currencyPair" name="currencyPair" value={currencyPair} onChange={handleChange} />
-            </div>
+                <div>
+                  <label htmlFor="currencyPair">Currency Pair:</label>
+                  <select id="currencyPair" name="currencyPair" value={currencyPair} onChange={handleChange}>
+                      <option value="GOLD">GOLD</option>
+                      <option value="USDJPY">USDJPY</option>
+                      <option value="EURUSD">EURUSD</option>
+                  </select>
+              </div>
+
             <div>
                 <input type="file" name="file" onChange={handleFileChange} />
             </div>
