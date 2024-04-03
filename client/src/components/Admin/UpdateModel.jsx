@@ -30,7 +30,7 @@ function UpdateModel() {
       formData.append('description', description);
       formData.append('currencyPair', currencyPair);
 
-      await axios.post('http://localhost:5555/api/upload', formData, {
+      await axios.post('http://192.168.15.227:5656/api/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
