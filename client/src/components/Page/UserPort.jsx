@@ -35,7 +35,11 @@ const UserPort = () => {
     const fetchData = async () => {
         try {
             setLoading(true);
-            const response = await axios.get('http://192.168.15.227:5656/api/mt4data');
+            const response = await axios.get('http://192.168.15.227:5656/api/mt4data', {
+                params: {
+                    userLogin: userLogin // ส่ง userLogin ใน query parameters
+                }
+            });
             setMt4Data(response.data);
             calculateCommission(response.data);
         } catch (error) {
@@ -55,7 +59,7 @@ const UserPort = () => {
         const commission = totalProfit * 0.1;
         setTotalProfit(totalProfit);
         setCommissionPayment(commission);
-    };
+    };  
 
     return (
         <div >
